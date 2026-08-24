@@ -1,0 +1,5 @@
+# Runtime
+-r backend/requirements.txt
+
+# Windows packaging
+pyinstaller==6.16.0

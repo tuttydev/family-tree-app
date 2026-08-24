@@ -1,0 +1,47 @@
+backend/.venv/
+backend/__pycache__/
+backend/*.db
+backend/*.db-*
+__pycache__/
+*.pyc
+
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Virtual environments
+venv/
+.venv/
+env/
+
+# PyInstaller
+build/
+dist/
+*.spec
+
+# IDE
+.vscode/
+.idea/
+
+# Logs
+*.log
+
+# Local databases
+*.db
+*.sqlite
+*.sqlite3
+
+# Environment/secrets
+.env
+*.key
+*.pem
+
+# Windows
+Thumbs.db
+desktop.ini
+
+# Temporary files
+*.tmp
+*.bak
