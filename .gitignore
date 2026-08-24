@@ -45,3 +45,5 @@ desktop.ini
 # Temporary files
 *.tmp
 *.bak
+
+backend/seed_uploads/*
