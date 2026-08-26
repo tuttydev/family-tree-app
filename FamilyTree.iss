@@ -4,26 +4,47 @@
 #define MyAppExeName "FamilyTree.exe"
 
 [Setup]
-AppId={{7A1D7F5E-9C62-4E6C-B7A5-3B7A4F4D6E21}
+AppId={{B8F2A5D4-7E3A-4E51-A4C8-FAMILYTREE2026}}
 AppName={#MyAppName}
 AppVersion={#MyAppVersion}
+AppVerName={#MyAppName} {#MyAppVersion}
 AppPublisher={#MyAppPublisher}
-DefaultDirName={autopf}\FamilyTree
+
+DefaultDirName={localappdata}Programs\FamilyTree
 DefaultGroupName=FamilyTree
-OutputDir=installer
-OutputBaseFilename=FamilyTree-Setup
+
+OutputDir=C:\family_tree_app\installer
+OutputBaseFilename=FamilyTree-v{#MyAppVersion}-Setup
+
 Compression=lzma
 SolidCompression=yes
+
 WizardStyle=modern
-PrivilegesRequired=admin
+
+PrivilegesRequired=lowest
+
+ArchitecturesInstallIn64BitMode=x64compatible
+
+UninstallDisplayName=FamilyTree
 UninstallDisplayIcon={app}\{#MyAppExeName}
 
+DisableProgramGroupPage=yes
+
 [Files]
-Source: "dist\FamilyTree.exe"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\family_tree_app\FamilyTree-v2.0.0-Windows\FamilyTree.exe"; DestDir: "{app}"; Flags: ignoreversion
 
 [Icons]
-Name: "{autoprograms}\FamilyTree"; Filename: "{app}\{#MyAppExeName}"
 Name: "{autodesktop}\FamilyTree"; Filename: "{app}\{#MyAppExeName}"
+Name: "{group}\FamilyTree"; Filename: "{app}\{#MyAppExeName}"
+Name: "{group}\Uninstall FamilyTree"; Filename: "{uninstallexe}"
 
 [Run]
 Filename: "{app}\{#MyAppExeName}"; Description: "Launch FamilyTree"; Flags: nowait postinstall skipifsilent
+
+[Dirs]
+Name: "{localappdata}\FamilyTree"
+Name: "{localappdata}\FamilyTree\uploads"
+
+[UninstallDelete]
+Type: dirifempty; Name: "{localappdata}\FamilyTree\uploads"
+Type: dirifempty; Name: "{localappdata}\FamilyTree"
