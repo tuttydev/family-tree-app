@@ -1,16 +1,88 @@
 # Python
+
 .venv/
-__pycache__/
-*.pyc
+**pycache**/
+*.py[cod]
+*.pyo
+*.pyd
 
-# PyInstaller generated folders
-build/
-dist/
+# Environment / secrets
 
-# Application-generated uploads/data
+.env
+.env.*
+!.env.example
+
+# SQLite databases - NEVER commit personal family data
+
+*.db
+*.db-shm
+*.db-wal
+*.sqlite
+*.sqlite3
+
+# Uploaded / personal family photos
+
+uploads/
+backend/uploads/
 backend/seed_uploads/
 
-# Windows release artifacts
-FamilyTree-v*-Windows/
-FamilyTree-v*-Windows.zip
+# Backups / temporary databases
+
+backup/
+migration_test/
+test_family_tree.db
+family_tree_backup.db
+family_tree_before_migration.db
+*_backup*
+*_before_migration*
+
+# Python build artifacts
+
+build/
+dist/
+*.spec
+!FamilyTree.spec
+
+# PyInstaller
+
+**pycache**/
+
+# Node
+
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+
+# Frontend generated files
+
+frontend.zip
+
+# Temporary / test files
+
+test_app.js
+current_structure.txt
+project_structure.txt
+project_structure.txtnotepad
+
+# Editor / OS files
+
+.vscode/
+.idea/
+*.log
+.DS_Store
+Thumbs.db
+
+
+
+# Temporary / backup source files
+*.backup*
+*.bak
+*_current_damaged.py
+backend/curl
+backend/python
+
+# Packaged copies / archives
+FamilyTree-v2.0.0-Windows.zip
+FamilyTree-v2.0.0-Windows/
 installer/

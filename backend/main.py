@@ -76,8 +76,22 @@ def _person_payload(person: Person) -> dict:
         "first_name": person.first_name,
         "last_name": person.last_name,
         "gender": person.gender,
+
+        # Birth information
         "date_of_birth": person.date_of_birth,
+        "place_of_birth": person.place_of_birth,
+
+        # Death information
+        "date_of_death": person.date_of_death,
+        "place_of_death": person.place_of_death,
+
+        # Personal information
         "email": person.email,
+        "phone": person.phone,
+        "occupation": person.occupation,
+        "biography": person.biography,
+
+        # Profile photograph
         "photo_url": _file_url(person.photo_filename),
     }
 
@@ -209,6 +223,8 @@ cors_origins = [
 
 if not cors_origins:
     cors_origins = [
+        "http://127.0.0.1:8080",
+        "http://localhost:8080",
         "http://localhost:5173",
         "http://127.0.0.1:5173",
     ]
